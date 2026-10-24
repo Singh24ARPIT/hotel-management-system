@@ -2,6 +2,8 @@
 
 A guest feedback and review-triage application for a single-property hotel pilot.
 
+**Live preview:** <https://singh24arpit.github.io/hotel-management-system/>
+
 The guest-facing experience is built with plain HTML, CSS, and JavaScript. Reviews are intended to be stored in a managed Supabase Postgres database, with staff authentication, row-level security, and a server-side submission function. A small machine-learning model will help staff identify negative reviews and recurring service issues. The model is advisory only; hotel staff make the final decision.
 
 > **Current status:** guest-facing preview. The application currently runs in local preview mode and does not yet persist reviews to a live database. The ML pipeline and staff dashboard are being added after the verified review dataset and Supabase project are available.
