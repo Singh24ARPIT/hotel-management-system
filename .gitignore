@@ -1,0 +1,32 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Guest data and ML datasets must never be committed
+data/
+datasets/
+private/
+*.csv
+*.xlsx
+*.xls
+
+# Trained artifacts and local experiments
+models/
+*.joblib
+*.pkl
+*.onnx
+
+# Local tooling
+.DS_Store
+node_modules/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+
+# Deployment output
+dist/
+build/

@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta
+      name="description"
+      content="Share a private review of your recent hotel stay."
+    />
+    <meta name="theme-color" content="#173d34" />
+    <title>Share your feedback | Hotel Management System</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body data-page="feedback">
+    <div class="demo-banner" data-demo-banner hidden></div>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header site-header--solid">
+      <div class="container site-header__inner">
+        <a class="brand" href="index.html">
+          <span class="brand__mark" aria-hidden="true">HMS</span>
+          <span>
+            <span class="brand__name" data-hotel-name>Hotel Management System</span>
+            <span class="brand__descriptor">Guest feedback</span>
+          </span>
+        </a>
+        <nav class="header-nav" aria-label="Primary">
+          <a class="header-nav__link" href="index.html">Back to home</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-main" id="main">
+      <div class="container container--narrow">
+        <div class="page-intro">
+          <p class="eyebrow">Your stay, in your words</p>
+          <h1>Tell us how it felt.</h1>
+          <p>
+            There are no wrong answers. A few honest details help us understand
+            what to protect and what to improve.
+          </p>
+        </div>
+
+        <div class="form-shell">
+          <div>
+            <div
+              class="alert alert--error"
+              id="form-error"
+              role="alert"
+              tabindex="-1"
+              hidden
+            ></div>
+
+            <form
+              class="review-form"
+              id="review-form"
+              novalidate
+            >
+              <section class="form-section" aria-labelledby="stay-heading">
+                <div class="section-heading">
+                  <h2 id="stay-heading">Your stay</h2>
+                  <span class="required-mark">Required</span>
+                </div>
+
+                <div
+                  class="rating-control"
+                  data-rating-name="overall"
+                  data-rating-label="Overall stay"
+                  data-required="true"
+                ></div>
+
+                <div class="field" style="margin-top: 1.5rem">
+                  <span class="field-label">Would you recommend us?</span>
+                  <div class="recommend-options" role="radiogroup" aria-label="Would you recommend us?">
+                    <div class="choice-pill">
+                      <input
+                        type="radio"
+                        id="recommend-yes"
+                        name="recommend"
+                        value="yes"
+                      />
+                      <label for="recommend-yes">Yes, gladly</label>
+                    </div>
+                    <div class="choice-pill">
+                      <input
+                        type="radio"
+                        id="recommend-no"
+                        name="recommend"
+                        value="no"
+                      />
+                      <label for="recommend-no">Not yet</label>
+                    </div>
+                  </div>
+                  <p class="field-help">Optional</p>
+                </div>
+              </section>
+
+              <section class="form-section" aria-labelledby="details-heading">
+                <div class="section-heading">
+                  <h2 id="details-heading">The essentials</h2>
+                  <span class="field-help">Optional</span>
+                </div>
+                <p class="field-help" style="margin: -0.5rem 0 1.4rem">
+                  Rate only what you experienced. Leave the rest blank if you
+                  prefer.
+                </p>
+
+                <div class="rating-control" data-rating-name="cleanliness" data-rating-label="Cleanliness"></div>
+                <div class="rating-control" data-rating-name="service" data-rating-label="Service"></div>
+                <div class="rating-control" data-rating-name="comfort" data-rating-label="Room comfort"></div>
+                <div class="rating-control" data-rating-name="food" data-rating-label="Food &amp; beverage"></div>
+                <div class="rating-control" data-rating-name="value" data-rating-label="Value for money"></div>
+              </section>
+
+              <section class="form-section" aria-labelledby="words-heading">
+                <div class="section-heading">
+                  <h2 id="words-heading">In your own words</h2>
+                  <span class="field-help">Optional</span>
+                </div>
+
+                <div class="field" id="comment-field">
+                  <label for="comment">What should we know?</label>
+                  <textarea
+                    id="comment"
+                    name="comment"
+                    maxlength="2000"
+                    aria-describedby="comment-count"
+                    placeholder="What stood out? What would you change? The small details are welcome."
+                  ></textarea>
+                  <div class="character-count" id="comment-count" aria-live="polite">
+                    <span data-comment-length>0</span>/2000 characters
+                  </div>
+                </div>
+              </section>
+
+              <section class="form-section" aria-labelledby="contact-heading">
+                <div class="section-heading">
+                  <h2 id="contact-heading">Can we follow up?</h2>
+                  <span class="field-help">Optional</span>
+                </div>
+
+                <details class="optional-details" id="contact-details">
+                  <summary>Add contact details</summary>
+                  <div class="optional-details__body">
+                    <p class="field-help" style="margin-top: 0">
+                      Leave your details only if you would like a member of our
+                      team to respond to this feedback.
+                    </p>
+
+                    <div class="field">
+                      <label for="guest-name">Name</label>
+                      <input
+                        type="text"
+                        id="guest-name"
+                        name="guestName"
+                        autocomplete="name"
+                        maxlength="120"
+                      />
+                    </div>
+
+                    <div class="field">
+                      <label for="guest-email">Email</label>
+                      <input
+                        type="email"
+                        id="guest-email"
+                        name="guestEmail"
+                        autocomplete="email"
+                        maxlength="254"
+                        inputmode="email"
+                      />
+                    </div>
+
+                    <div class="field">
+                      <label for="guest-phone">Phone</label>
+                      <input
+                        type="tel"
+                        id="guest-phone"
+                        name="guestPhone"
+                        autocomplete="tel"
+                        maxlength="32"
+                        inputmode="tel"
+                      />
+                    </div>
+
+                    <div class="checkbox-row">
+                      <input
+                        type="checkbox"
+                        id="contact-consent"
+                        name="contactConsent"
+                      />
+                      <label for="contact-consent">
+                        I agree to be contacted about this feedback. I
+                        understand that providing contact details is optional.
+                      </label>
+                    </div>
+                    <p class="field-error" id="contact-error" hidden>
+                      Please agree to be contacted if you leave contact details.
+                    </p>
+                  </div>
+                </details>
+              </section>
+
+              <div class="form-actions">
+                <button class="btn btn--primary btn--wide" id="submit-button" type="submit">
+                  Send feedback
+                  <svg
+                    class="btn__icon"
+                    viewBox="0 0 20 20"
+                    fill="none"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M4 10h12M11 5l5 5-5 5"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </button>
+                <p class="form-actions__note">
+                  Your feedback is handled in line with our
+                  <a href="privacy.html">privacy notice</a>. If you leave
+                  contact details, we will only use them to respond to this
+                  feedback.
+                </p>
+              </div>
+            </form>
+          </div>
+
+          <aside class="aside-card" aria-labelledby="aside-heading">
+            <p class="aside-card__eyebrow">A quieter kind of review</p>
+            <h2 id="aside-heading">This stays between us.</h2>
+            <p>
+              This is a private guest feedback channel. Your response is shared
+              with the hotel team, not published on a public review site.
+            </p>
+            <ul>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M10 2.5 17 5v4.6c0 4-2.9 6.8-7 7.9-4.1-1.1-7-3.9-7-7.9V5l7-2.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Takes about two minutes
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M10 2.5 17 5v4.6c0 4-2.9 6.8-7 7.9-4.1-1.1-7-3.9-7-7.9V5l7-2.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Contact details are optional
+              </li>
+              <li>
+                <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path
+                    d="M10 2.5 17 5v4.6c0 4-2.9 6.8-7 7.9-4.1-1.1-7-3.9-7-7.9V5l7-2.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.35"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                Used to improve future stays
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container site-footer__inner">
+        <p>
+          © <span data-current-year>2026</span>
+          <span data-hotel-name>Hotel Management System</span>. All rights
+          reserved.
+        </p>
+        <nav class="site-footer__links" aria-label="Legal">
+          <a href="index.html">Home</a>
+          <a href="privacy.html">Privacy notice</a>
+        </nav>
+      </div>
+    </footer>
+
+    <div class="visually-hidden" id="tts-status" role="status" aria-live="polite"></div>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/site.js"></script>
+    <script type="module" src="assets/js/feedback.js"></script>
+  </body>
+</html>
